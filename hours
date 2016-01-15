@@ -11,7 +11,7 @@
     </div>
     <div class="inside_page_content">
         <div class="left_column">
-            <img class="inside_banner_image" alt="banner" src="http://assets.codecloudapp.com/sites/54e663f76e6f643dca000000/image/png/1452879780000/Web banner FallWinter 2.png"/>
+            <img class="inside_banner_image" alt="banner" src="http://assets.codecloudapp.com/sites/54e663f76e6f643dca000000/image/png/1452893469000/Web banner FallWinter 2.png"/>
             <p class="right_column_header">regular hours</p>
             <table id="reg_hours_container" class="reg_hours_container">
                 <script id="reg_hours_template" type="x-tmpl-mustache/text">
