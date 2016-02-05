@@ -22,7 +22,7 @@
                     <p class="directory_content">{{city}}, {{province_state}} {{postal_code}}</p>
                     <br>
                     <p class="directory_content">
-                    <br>Guest Services
+                    <br><strong>Guest Services</strong>
                     <br>416-757-7770 ext. 110 
                     <br><a href="mailto:info@eglintonsquare.ca">info@eglintonsquare.ca</a></p>
                     <br>
@@ -130,7 +130,7 @@
                     <p class="directory_content">{{city}}, {{province_state}} {{postal_code}}</p>
                     <br>
                     <p class="directory_content">
-                    <br>Guest Services
+                    <br><strong>Guest Services</strong>
                     <br>416-757-7770 ext. 110 
                     <br><a href="mailto:info@eglintonsquare.ca">info@eglintonsquare.ca</a></p>
                     <br>
