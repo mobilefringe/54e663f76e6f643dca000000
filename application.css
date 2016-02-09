@@ -19,9 +19,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-#flake{
-    z-index:9999
-}
+
 body {
   margin: 0;
 }
