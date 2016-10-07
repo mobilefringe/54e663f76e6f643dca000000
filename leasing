@@ -1,0 +1,137 @@
+<div id="loading_screen">
+    <img alt="loading" src="//kodekloud.s3.amazonaws.com/sites/5447ebb66e6f641987020000/3604f5c26997bea3de504de139debcec/loading.gif"/>
+</div>
+<div  id="main_content" style="display:none">
+    <ul class="breadcrumb">
+        <li><a href="/home">Home</a> </li>
+        <li class="active">Leasing</li>
+    </ul>
+    <div class="page_banner">
+        leasing
+    </div>
+    <div class="inside_page_content">
+        <div class="left_column">
+            <img class="inside_banner_image" alt="banner" src="//kodekloud.s3.amazonaws.com/sites/54e663f76e6f643dca000000/7a3a6957ee353b684995ea9fa4cc8f18/banner-3_edited.jpg"/>
+            <p class="columns_2">
+                       
+
+<p>Eglinton Square is a 286,000 s.f. enclosed shopping centre conveniently located at the intersection of Eglinton
+Avenue East and Victoria Park. The Shopping Centre is anchored by the Bay, and Shoppers Drug Mart along with
+Metro as a shadow anchor. The mall acts as a community hub with a stable and loyal customer base which
+comprises of many seniors and young families. The primary trade area is undergoing a transition from a European
+based population to multi ethnic, bringing in new and younger families and a gentrification of the area.
+</p> <p>The centre sits in a densely populated area with over and 47,000 households and 126,000 residents within a 3
+kilometre radius. Surrounded by mid-century homes, apartments, and new condominium developments, this high
+density area continues to grow in demand due to affordability and proximity to Toronto’s downtown core.
+</p> <p>Plans for the new Eglinton Light Rail Transit, in approximately 2020, will have stops at the immediate east and
+west ends of the Shopping Centre at Victoria Park and Pharmacy Avenue.</p>
+
+ <br>
+               <strong>Total GLA:  </strong>274,132 square feet
+              
+         
+          
+          <section class="article-text">
+               
+                        <br>
+                        <p style="margin-bottom:0"><strong>Major Tenants:</strong></p>
+                        <p>The Bay
+                            <br>Shoppers Drug Mart
+                            <br>Dollarama
+                            <br>TD Canada Trust
+                            <br>Metro (shadow anchor)
+                           
+                        </p>    
+                        <br>
+                        <p><strong>Ancillary:  </strong>125,476 square feet </p>
+                   
+                        <table>
+                            <tr>
+                                <td style="width:215px"><strong>Demographics:</strong></td>
+                                <td style="width:100px">1km</td>
+                                <td style="width:100px">3km</td>
+                                <td style="width:100px">5km</td>
+                            </tr>
+                            <tr>
+                                <td style="width:215px"><strong>Total Population:</strong></td>
+                                <td style="width:100px">15,791</td>
+                                <td style="width:100px">126,434</td>
+                                <td style="width:100px">354,024</td>
+                            </tr>
+                            <tr>
+                                <td style="width:215px"><strong>Total Households:</strong></td>
+                                <td style="width:100px">6,209</td>
+                                <td style="width:100px">47,575</td>
+                                <td style="width:100px">133,075</td>
+                            </tr>
+                            <tr>
+                                <td style="width:215px"><strong>Household Average Income:</strong></td>
+                                <td style="width:100px">$75,457</td>
+                                <td style="width:215px">$73,936</td>
+                                <td style="width:215px">$77,160</td>
+                            </tr>
+                        </table>
+                        <br>
+             
+                        <h3>For Leasing Inquiries Contact:</h3>
+                  
+                        <p>Carrie Devries
+                        <br>Director, Leasing Retail Services
+                        <br>1.866.681.2715
+                        <br><a href="mailto:cdevries@bentallkennedy.com"><strong>cdevries@bentallkennedy.com</strong></a>
+                        <br>
+                        <br>
+                        <a href="//kodekloud.s3.amazonaws.com/sites/54e663f76e6f643dca000000/5b098ff0afeb8b5ea8d1eb312fe5549e/Eglinton%20Square%20Site%20Plan%20January%202015.pdf" target="blank"><strong>Click to download site plan PDF</strong></a>
+
+        </div>
+        <div class="right_column">
+            <p class="right_column_header">centre information</p>
+            <div id="centre_info_container">
+                <script id="centre_info_template" type="x-tmpl-mustache/text">
+                    <p class="directory_content">{{name}}</p>
+                    <p class="directory_content">{{address1}}</p>
+                    <p class="directory_content">{{city}}, {{province_state}} {{postal_code}}</p>
+                </script>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        function renderAll (){
+            var propertyDetails = getPropertyDetails();
+            renderPageData('#centre_info_container','#centre_info_template',propertyDetails, 'property_details')
+            $("#loading_screen").hide();
+            $("#main_content").show();
+        }
+        
+    
+        function renderPageData(container, template, collection, type){
+            var item_list = [];
+            var item_rendered = [];
+            var template_html = $(template).html();
+            Mustache.parse(template_html);   // optional, speeds up future uses
+            if (type == "property_details"){
+                item_list.push(collection);
+                collection = []
+                collection = item_list;
+            }
+            $.each( collection , function( key, val ) {
+                var rendered = Mustache.render(template_html,val);
+                item_rendered.push(rendered);
+    
+            });
+            
+            $(container).show();
+            $(container).html(item_rendered.join(''));
+        };
+
+        loadMallData(renderAll);  
+
+    
+  
+    });
+    
+</script>
