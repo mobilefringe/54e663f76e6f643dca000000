@@ -124,11 +124,9 @@
                 }
                 var rendered = Mustache.render(template_html,val);
                 item_rendered.push(rendered);
-                
+                item_rendered.sort(val.dates);
                 console.log(val.dates);
             });
-            item_rendered.sort(val.dates);
-            
             $(container).show();
             $(container).html(item_rendered.join(''));
         };
