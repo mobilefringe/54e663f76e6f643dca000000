@@ -124,7 +124,7 @@
                 }
                 var rendered = Mustache.render(template_html,val);
                 console.log(val.dates);
-                rendered.sort(function(a, b));
+                rendered.sort(function(a, b))
                 
                 
                 item_rendered.push(rendered);
