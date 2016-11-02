@@ -55,7 +55,7 @@
         function renderAll (){
             var propertyDetails = getPropertyDetails();
             renderPageData('#centre_info_container','#centre_info_template',propertyDetails, 'property_details')
-            all_promos = getPromotionsList()sortBy(function(o){ return o.end_date }); 
+            all_promos = getPromotionsList().sortBy(function(o){ return o.end_date }); 
             // all_promos = all_promos.reverse();
             promo_array = []
             $.each( all_promos , function( key, val ){
