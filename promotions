@@ -47,13 +47,16 @@
         </div>
     </div>
 </div>
+
+<!--var promotions = getPromotionsList().sortBy(function(o){ return o.end_date });-->
+
 <script>
     $(document).ready(function() {
         function renderAll (){
             var propertyDetails = getPropertyDetails();
             renderPageData('#centre_info_container','#centre_info_template',propertyDetails, 'property_details')
-            all_promos = getPromotionsList(); 
-            all_promos = all_promos.reverse();
+            all_promos = getPromotionsList()sortBy(function(o){ return o.end_date }); 
+            // all_promos = all_promos.reverse();
             promo_array = []
             $.each( all_promos , function( key, val ){
                 // today = new Date();
@@ -118,18 +121,12 @@
                     if (start.format("DMY") == end.format("DMY")){
                     	val.dates = start.format("MMM D");
                     }
-                    else {
+                    else{
                     	val.dates = start.format("MMM D") + " - " + end.format("MMM D");
                     }
                 }
                 var rendered = Mustache.render(template_html,val);
-                console.log(val.dates);
-                rendered.sort(function(a, b))
-                
-                
                 item_rendered.push(rendered);
-                
-                
             });
             $(container).show();
             $(container).html(item_rendered.join(''));
