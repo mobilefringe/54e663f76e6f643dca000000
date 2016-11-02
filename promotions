@@ -47,9 +47,6 @@
         </div>
     </div>
 </div>
-
-<!--var promotions = getPromotionsList().sortBy(function(o){ return o.end_date });-->
-
 <script>
     $(document).ready(function() {
         function renderAll (){
