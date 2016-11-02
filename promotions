@@ -53,7 +53,7 @@
             var propertyDetails = getPropertyDetails();
             renderPageData('#centre_info_container','#centre_info_template',propertyDetails, 'property_details')
             all_promos = getPromotionsList(); 
-            // all_promos = all_promos.sort();
+            all_promos = all_promos.reverse();
             promo_array = []
             $.each( all_promos , function( key, val ){
                 // today = new Date();
