@@ -118,12 +118,13 @@
                     if (start.format("DMY") == end.format("DMY")){
                     	val.dates = start.format("MMM D");
                     }
-                    else{
+                    else {
                     	val.dates = start.format("MMM D") + " - " + end.format("MMM D");
                     }
                 }
                 var rendered = Mustache.render(template_html,val);
                 item_rendered.push(rendered);
+                item_rendered.sort(end)
             });
             $(container).show();
             $(container).html(item_rendered.join(''));
