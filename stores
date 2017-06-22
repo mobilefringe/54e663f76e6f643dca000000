@@ -144,9 +144,7 @@
             $(container).html(item_rendered.join(''));
         };
     
-
         function render_category_stores(){
-            
             var category_stores = [];
             var item_rendered = [];
             var all_stores = getStoresList();
@@ -162,7 +160,6 @@
                         category_stores.push(all_stores[j]);
                         stores_per_cat.push(all_stores[j]);
                     }
-                
                 }
                 var rendered = Mustache.render(template_html,all_categories[i]);
                 item_rendered.push(rendered);
@@ -177,36 +174,27 @@
                         all_stores[j].alt_store_front_url = getImageURL(all_stores[j].store_front_url);    
                         populate_stores_for_cat(all_categories[i].id, all_stores[j]);
                     }
-                
                 }
             }
-            
         };
     
         function populate_stores_for_cat (categoryid, store){
             $('#cat'+categoryid+'_list').append('<span id="store_for_'+store.id+'"><a href="../stores/'+store.slug+'"><p class="directory_content directory_name_col">'+store.name+'</p></a><a href="tel:'+store.phone+'"><p class="directory_content directory_phone_col">  '+store.phone+'</p></a></span>');
-            
         }
-        
-         
-    
-    function goToStore(store_details){
-        if(typeof(store_details) != 'undefined' && store_details != null){
-            window.location.href = "/stores/"+store_details.slug;
-        }
-    }
 
-    function getSVGMapURL(){
-        initData();
-        var mallDataJSON = JSON.parse(getStorage().mallData);
-        return 'https://mallmaverick.cdn.speedyrails.net' + mallDataJSON.property.svgmap_url;
-    }
-    
+        function goToStore(store_details){
+            if(typeof(store_details) != 'undefined' && store_details != null){
+                window.location.href = "/stores/"+store_details.slug;
+            }
+        }
+
+        function getSVGMapURL(){
+            initData();
+            var mallDataJSON = JSON.parse(getStorage().mallData);
+            return 'https://mallmaverick.cdn.speedyrails.net' + mallDataJSON.property.svgmap_url;
+        }
     
         loadMallData(renderAll);  
-
-    
-  
     });
     
     function show_cat(link, type){
